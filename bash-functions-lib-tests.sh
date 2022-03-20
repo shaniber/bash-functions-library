@@ -120,7 +120,7 @@ echo
 
 echo "### Test confirm_requirements function."
 if util::confirm_requirements ; then
-    echo "GIT_PATH is ${GIT_PATH}\n"
+    echo "GIT_PATH is ${GIT_PATH}"
 fi
 
 echo
