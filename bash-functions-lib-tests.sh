@@ -98,7 +98,7 @@ echo "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
 echo
 
 echo "### Test error function."
-util::error This is an error statement."
+util::error "» This is an error statement."
 
 echo
 echo "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
