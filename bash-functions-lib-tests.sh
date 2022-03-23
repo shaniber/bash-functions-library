@@ -111,6 +111,13 @@ echo
 echo "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
 echo
 
+echo "### Test confirm funciton."
+util::confirm "Press Y, n, or enter"
+
+echo
+echo "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
+echo
+
 echo "### Test usage function."
 util::usage
 
