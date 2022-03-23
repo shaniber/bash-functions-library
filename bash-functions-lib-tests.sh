@@ -112,7 +112,7 @@ echo "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
 echo
 
 echo "### Test confirm funciton."
-util::confirm "Press Y, n, or enter"
+util::confirm "» Press Y, n, or enter"
 
 echo
 echo "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
