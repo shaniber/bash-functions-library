@@ -45,6 +45,34 @@ function util::pause() {
   read -n 1 -s -r
 }
 
+## Confirm (with prompt).
+function util::confirm() {
+  local prompt input
+  if [ -n "$1" ] ; then
+    prompt="$1"
+  else 
+    prompt="Confirm"
+  fi
+  prompt="${prompt} [Y/n]: "
+
+  while true ; do
+    read -r -p "${prompt}" input
+    case $input in
+      # Y/y or enter is yes. 
+      ""|[Yy]* )
+        return 0
+        ;;
+      # N/n is no
+      [Nn]* ) 
+        return 1
+        ;;
+      # Anything else is ignored.
+      * ) 
+        ;;
+    esac
+  done
+}
+
 ## Usage.
 function util::usage() {
   util::print "Usage: ./SCRIPT-NAME.sh \n\n"
