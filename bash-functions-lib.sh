@@ -34,6 +34,12 @@ function util::print() {
   fi
 }
 
+## Warning reporting.
+function util::warn() {
+  util::debug "A warning has occurred."
+  printf "\n%b%b[WARN]%b  %s\n\n" "${yellow}" "${reverse}" "${noColour}" "$1">&2
+}
+
 ## Error reporting.
 function util::error() {
   util::debug "An error has occurred."
