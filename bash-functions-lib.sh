@@ -37,7 +37,7 @@ function util::print() {
 ## Warning reporting.
 function util::warn() {
   util::debug "A warning has occurred."
-  printf "\n%b%b[WARN]%b  %s\n\n" "${yellow}" "${reverse}" "${noColour}" "$1">&2
+  printf "\n%b%b[WARN]%b  %b\n\n" "${yellow}" "${reverse}" "${noColour}" "$1">&2
 }
 
 ## Error reporting.
@@ -95,10 +95,12 @@ function util::confirm_requirements() {
     GIT_PATH=$(command -v git)
     if ! [ -x ${GIT_PATH} ] ; then
       util::error "${blue}git${noColour} is on your path, but is not executable.\\nPlease make it executable and rerun this script."
-      exit 1
+      return 1
     fi
   else
     util::error "${blue}git${nocolour} is not available.\\nPlease install it on your path."
+    return 1
   fi
+  return 0
 } 
 
