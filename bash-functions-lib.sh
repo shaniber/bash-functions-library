@@ -1,17 +1,18 @@
 #!/usr/bin/env bash
 
 ## Sugar.
-readonly bold=$(tput bold)
-readonly reverse=$(tput rev)
-readonly red=$(tput setaf 1)
-readonly green=$(tput setaf 2)
-readonly yellow=$(tput setaf 3)
-readonly blue=$(tput setaf 4)
-readonly magenta=$(tput setaf 5)
-readonly cyan=$(tput setaf 6)
-readonly orange=$(tput setaf 202)
-readonly white=$(tput setaf 7)
-readonly noColour=$(tput sgr 0)
+bold=$(tput bold)
+reverse=$(tput rev)
+red=$(tput setaf 1)
+orange=$(tput setaf 202)
+yellow=$(tput setaf 3)
+green=$(tput setaf 2)
+cyan=$(tput setaf 6)
+blue=$(tput setaf 4)
+magenta=$(tput setaf 5)
+white=$(tput setaf 7)
+noColour=$(tput sgr 0)
+readonly bold reverse red orange yellow green cyan blue magenta white noColour
 
 ## Set to 1 to enable debugging
 DEBUG=0
@@ -22,21 +23,21 @@ GIT_PATH=""
 ## Debugging.
 function util::debug() {
   if [[ $DEBUG == 1 ]] ; then
-    printf "${blue}[DEBUG]${noColour} ${1}\n"
+    printf '%s[DEBUG]%b %b \n' "${blue}" "${noColour}" "${1}"
   fi
 }
 
 ## Generic printing.
 function util::print() {
   if [[ ! $SILENT == 1 ]] ; then
-    printf "${1}"
+    printf "%b" "${1}"
   fi
 }
 
 ## Error reporting.
 function util::error() {
   util::debug "An error has occurred."
-  printf "\n${red}${reverse}[ERROR]${noColour} $1\n\n" >&2
+  printf "\n%b%b[ERROR]%b %s\n\n" "${red}" "${reverse}" "${noColour}" "${1}" >&2 
 }
 
 ## Pause for keypress.
