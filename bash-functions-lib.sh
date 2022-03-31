@@ -30,7 +30,7 @@ function util::debug() {
 ## Generic printing.
 function util::print() {
   if [[ ! $SILENT == 1 ]] ; then
-    printf "%s" "${1}"
+    printf "%b" "${1}"
   fi
 }
 
