@@ -40,12 +40,6 @@ function util::error() {
   printf "\n%b%b[ERROR]%b %s\n\n" "${red}" "${reverse}" "${noColour}" "${1}" >&2 
 }
 
-## Warning reporting.
-function util::warn() {
-  util::debug "A warning has occurred."
-  printf "\n%b%b[WARN]%b  %s\n\n" "${yellow}" "${reverse}" "${noColour}" "$1">&2
-}
-
 ## Pause for keypress.
 function util::pause() {
   util::print "${green}Press any key to continue...${noColour}\n"
