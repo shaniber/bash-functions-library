@@ -3,6 +3,12 @@
 # shellcheck disable=SC2046,SC2154,SC2304,SC1091,SC2059,SC2034
 
 ## 
+test-extract() {
+  string_to_be_extracted=$1
+  escaped_string=${string_to_be_extracted@Q}
+  echo "${escaped_string:2:-1}"
+}
+
 extract() {
   string_to_be_extracted=$1
   escaped_string=${string_to_be_extracted@Q}
@@ -28,6 +34,9 @@ source $( dirname "${BASH_SOURCE[0]}" )/bash-functions-lib.sh
 echo "-=-= COLOUR TESTS =-=-"
 ### TESTING TEST!
 echo "Is this bold? ${bold}Right here!${noColour}"
+echo "Test extract:" 
+test-extract "$bold"
+echo "${noColour}"
 
 
 ### BOLD test
