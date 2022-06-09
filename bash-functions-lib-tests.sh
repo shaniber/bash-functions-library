@@ -26,6 +26,10 @@ source $( dirname "${BASH_SOURCE[0]}" )/bash-functions-lib.sh
 ## Test each function.
 
 echo "-=-= COLOUR TESTS =-=-"
+### TESTING TEST!
+echo "Is this bold? ${bold}Right here!${noColour}"
+
+
 ### BOLD test
 increment_test_counter
 printf "» [TEST%+3s/%s]%+26s " $count $TOTAL_TESTS "BOLD:"
