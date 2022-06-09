@@ -24,6 +24,7 @@ source $( dirname "${BASH_SOURCE[0]}" )/bash-functions-lib.sh
 
 ## Test each function.
 
+echo
 echo "-=-= FORMAT TESTS =-=-"
 ### BOLD test
 increment_test_counter
@@ -58,6 +59,7 @@ else
 fi
 tput sgr 0
 
+echo
 echo "-=-= COLOUR TESTS =-=-"
 ### RED test
 increment_test_counter
