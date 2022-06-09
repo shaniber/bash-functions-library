@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
-## Sugar.
+## Sugar (see man 5 terminfo).
 bold=$(tput bold)
 reverse=$(tput rev)
+strike=$(echo -e "\e[9m")
 red=$(tput setaf 1)
 orange=$(tput setaf 202)
 yellow=$(tput setaf 3)
