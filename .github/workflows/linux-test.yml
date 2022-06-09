@@ -1,0 +1,13 @@
+name: Linux Tests
+on: [push]
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: environment
+        run: echo "TERM=xterm-256color" >> $GITHUB_ENV
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: run-test-script
+        run: ./bash-functions-lib-tests.sh
+        shell: bash

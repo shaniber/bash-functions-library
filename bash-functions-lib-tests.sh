@@ -2,9 +2,9 @@
 
 # shellcheck disable=SC2046,SC2154,SC2304,SC1091,SC2059,SC2034
 
-## 
 extract() {
-  escaped_string=${1@Q}
+  string_to_be_extracted=$1
+  escaped_string=${string_to_be_extracted@Q}
   echo "${escaped_string:2:-1}"
 }
 
@@ -24,7 +24,8 @@ source $( dirname "${BASH_SOURCE[0]}" )/bash-functions-lib.sh
 
 ## Test each function.
 
-echo "-=-= COLOUR TESTS =-=-"
+echo
+echo "-=-= FORMAT TESTS =-=-"
 ### BOLD test
 increment_test_counter
 printf "» [TEST%+3s/%s]%+26s " $count $TOTAL_TESTS "BOLD:"
@@ -58,6 +59,8 @@ else
 fi
 tput sgr 0
 
+echo
+echo "-=-= COLOUR TESTS =-=-"
 ### RED test
 increment_test_counter
 printf "» [TEST%+3s/%s]%+26s " $count $TOTAL_TESTS "RED:"
@@ -177,7 +180,7 @@ tput sgr 0
 increment_test_counter
 printf "» [TEST%+3s/%s]%+26s " $count $TOTAL_TESTS "PRINT FUNCTION:"
 if ! [ "$(util::print "Test")"  == "Test" ] ; then 
-    echo "$(tput setaf 1) FAILED"
+  echo "$(tput setaf 1) FAILED"
   increment_failed_tests_counter
 else
     echo "$(tput setaf 2)PASSED"
