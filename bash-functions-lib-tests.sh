@@ -2,6 +2,7 @@
 
 # shellcheck disable=SC2046,SC2154,SC2304,SC1091,SC2059,SC2034
 
+echo "BASH_VERION: $BASH_VERSION"
 ## 
 test-extract() {
   echo "one: $1 :eno"
