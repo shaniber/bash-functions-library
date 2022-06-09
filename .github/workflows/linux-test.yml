@@ -4,6 +4,8 @@ jobs:
   run-tests:
     runs-on: ubuntu-latest
     steps:
+      - name: environment
+        run: echo "TERMINAL=xterm-256color" >> $GITHUB_ENV
       - name: checkout
         uses: actions/checkout@v3
       - name: run-test-script
