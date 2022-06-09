@@ -2,15 +2,6 @@
 
 # shellcheck disable=SC2046,SC2154,SC2304,SC1091,SC2059,SC2034
 
-echo "BASH_VERION: $BASH_VERSION"
-## 
-test-extract() {
-  echo "one: $1 :eno"
-  string_to_be_extracted=$1
-  escaped_string=${string_to_be_extracted@Q}
-  echo "${escaped_string:2:-1}"
-}
-
 extract() {
   string_to_be_extracted=$1
   escaped_string=${string_to_be_extracted@Q}
@@ -33,14 +24,7 @@ source $( dirname "${BASH_SOURCE[0]}" )/bash-functions-lib.sh
 
 ## Test each function.
 
-echo "-=-= COLOUR TESTS =-=-"
-### TESTING TEST!
-echo "Is this bold? ${bold}Right here!${noColour}"
-echo "Test extract:" 
-test-extract "$bold"
-echo "${noColour}"
-
-
+echo "-=-= FORMAT TESTS =-=-"
 ### BOLD test
 increment_test_counter
 printf "» [TEST%+3s/%s]%+26s " $count $TOTAL_TESTS "BOLD:"
@@ -74,6 +58,7 @@ else
 fi
 tput sgr 0
 
+echo "-=-= COLOUR TESTS =-=-"
 ### RED test
 increment_test_counter
 printf "» [TEST%+3s/%s]%+26s " $count $TOTAL_TESTS "RED:"
