@@ -4,6 +4,7 @@
 
 ## 
 test-extract() {
+  echo "one: $1 :eno"
   string_to_be_extracted=$1
   escaped_string=${string_to_be_extracted@Q}
   echo "${escaped_string:2:-1}"
