@@ -4,7 +4,8 @@
 
 ## 
 extract() {
-  escaped_string=${1@Q}
+  string_to_be_extracted=$1
+  escaped_string=${string_to_be_extracted@Q}
   echo "${escaped_string:2:-1}"
 }
 
@@ -177,7 +178,7 @@ tput sgr 0
 increment_test_counter
 printf "» [TEST%+3s/%s]%+26s " $count $TOTAL_TESTS "PRINT FUNCTION:"
 if ! [ "$(util::print "Test")"  == "Test" ] ; then 
-    echo "$(tput setaf 1) FAILED"
+  echo "$(tput setaf 1) FAILED"
   increment_failed_tests_counter
 else
     echo "$(tput setaf 2)PASSED"
