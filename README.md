@@ -8,6 +8,7 @@ This is intended for personal use, and is provided "AS IS". I make no warranties
 
 ## Idears
 
+- better documentation of variables, functions, tests.
 - justify function.  
 - plugins architecture.
 - yaml parsing plugin. 
