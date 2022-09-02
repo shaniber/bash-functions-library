@@ -92,14 +92,14 @@ function util::usage() {
 ###       It probably should.
 function util::confirm_requirements() {
   ### Check for, for example, the git command. 
-  if [ $(type -t git) == "file" ] ; then
+  if [ "$(type -t git)" == "file" ] ; then
     GIT_PATH=$(command -v git)
-    if ! [ -x ${GIT_PATH} ] ; then
+    if ! [ -x "${GIT_PATH}" ] ; then
       util::error "${blue}git${noColour} is on your path, but is not executable.\\nPlease make it executable and rerun this script."
       return 1
     fi
   else
-    util::error "${blue}git${nocolour} is not available.\\nPlease install it on your path."
+    util::error "${blue}git${noColour} is not available.\\nPlease install it on your path."
     return 1
   fi
   return 0

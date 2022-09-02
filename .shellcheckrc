@@ -1,0 +1,5 @@
+# Shellcheckrc
+
+external-sources=true
+
+disable=2046,2034

@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-# shellcheck disable=SC2046,SC2154,SC2304,SC1091,SC2059,SC2034
-
 extract() {
   string_to_be_extracted=$1
   escaped_string=${string_to_be_extracted@Q}
@@ -13,14 +11,14 @@ increment_test_counter() {
 }
 
 increment_failed_tests_counter() {
-  ((failed_tests=failted_tests+1))
+  ((failed_tests=failed_tests+1))
 }
 
 TOTAL_TESTS=20
 failed_tests=0
 count=0
 
-source $( dirname "${BASH_SOURCE[0]}" )/bash-functions-lib.sh
+source "$( dirname "${BASH_SOURCE[0]}" )/bash-functions-lib.sh"
 
 ## Test each function.
 
