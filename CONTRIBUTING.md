@@ -1,3 +1,3 @@
 # How to contribute
 
-Honestly, probably just don't.
+Honestly? Probably just don't.
