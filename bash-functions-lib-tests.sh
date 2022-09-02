@@ -24,6 +24,8 @@ source "$( dirname "${BASH_SOURCE[0]}" )/bash-functions-lib.sh"
 
 echo
 echo "-=-= FORMAT TESTS =-=-"
+
+
 ### BOLD test
 increment_test_counter
 printf "» [TEST%+3s/%s]%+26s " $count $TOTAL_TESTS "BOLD:"
@@ -147,7 +149,7 @@ else
 fi
 tput sgr 0
 
-## NOCOLOUR test
+### NOCOLOUR test
 increment_test_counter
 printf "» [TEST%+3s/%s]%+26s " $count $TOTAL_TESTS "NOCOLOUR:"
 if ! [ "$(extract "${noColour}")" == "\E(B\E[0m" ] ; then
@@ -161,7 +163,7 @@ tput sgr 0
 echo
 echo "-=-= FUNCTION TESTS =-=-"
 
-## DEBUG test
+### DEBUG test
 increment_test_counter
 DEBUG=1
 printf "» [TEST%+3s/%s]%+26s " $count $TOTAL_TESTS "DEBUG FUNCTION:"
@@ -174,7 +176,7 @@ fi
 DEBUG=0
 tput sgr 0
 
-## PRINT test
+### PRINT test
 increment_test_counter
 printf "» [TEST%+3s/%s]%+26s " $count $TOTAL_TESTS "PRINT FUNCTION:"
 if ! [ "$(util::print "Test")"  == "Test" ] ; then 
@@ -185,7 +187,7 @@ else
 fi
 tput sgr 0
 
-## WARN test
+### WARN test
 increment_test_counter
 printf "» [TEST%+3s/%s]%+26s " $count $TOTAL_TESTS "WARN FUNCTION:"
 if ! [ "$(extract "$(util::warn "" 2>&1)")" == "\n\E[33m\E[7m[WARN]\E(B\E[0m  " ] ; then
@@ -196,7 +198,7 @@ else
 fi
 tput sgr 0
 
-## ERROR test
+### ERROR test
 increment_test_counter
 printf "» [TEST%+3s/%s]%+26s " $count $TOTAL_TESTS "ERROR FUNCTION:"
 if ! [ "$(extract "$(util::error "" 2>&1)")" == "\n\E[31m\E[7m[ERROR]\E(B\E[0m " ] ; then
@@ -207,7 +209,7 @@ else
 fi
 tput sgr 0
 
-## PAUSE test
+### PAUSE test
 increment_test_counter
 printf "» [TEST%+3s/%s]%+26s " $count $TOTAL_TESTS "PAUSE FUNCTION:"
 if ! [ "$(extract "$(echo "z" | util::pause)")" == "\E[32mPress any key to continue...\E(B\E[0m" ] ; then 
@@ -218,7 +220,7 @@ else
 fi
 tput sgr 0
 
-## CONFIRM test (Should really test Y,N, and enter)
+### CONFIRM test (Should really test Y,N, and enter)
 increment_test_counter
 printf "» [TEST%+3s/%s]%+26s " $count $TOTAL_TESTS "CONFIRM FUNCTION:"
 if ! echo | util::confirm "Yes please" 2>/dev/null ; then 
@@ -229,7 +231,7 @@ else
 fi
 tput sgr 0
 
-## REQUIREMENTS test
+### REQUIREMENTS test
 increment_test_counter
 printf "» [TEST%+3s/%s]%+26s " $count $TOTAL_TESTS "REQUIREMENTS FUNCTION:"
 if ! util::confirm_requirements ; then
@@ -240,7 +242,7 @@ else
 fi
 tput sgr 0
 
-## USAGE test
+### USAGE test
 increment_test_counter
 printf "» [TEST%+3s/%s]%+26s " $count $TOTAL_TESTS "USAGE FUNCTION:"
 if ! [[ "$(util::usage)" =~ "Usage:" ]] ; then
