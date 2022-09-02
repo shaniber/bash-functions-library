@@ -35,6 +35,11 @@ function util::print() {
   fi
 }
 
+## String justify right.
+function util::justify() {
+  echo "no."
+}
+
 ## Warning reporting.
 function util::warn() {
   util::debug "A warning has occurred."
