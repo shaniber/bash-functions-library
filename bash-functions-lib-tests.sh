@@ -1,20 +1,20 @@
 #!/usr/bin/env bash
 
-extract() {
+function extract() {
   string_to_be_extracted=$1
   escaped_string=${string_to_be_extracted@Q}
   echo "${escaped_string:2:-1}"
 }
 
-increment_test_counter() {
+function increment_test_counter() {
   ((count=count+1))
 }
 
-increment_failed_tests_counter() {
+function increment_failed_tests_counter() {
   ((failed_tests=failed_tests+1))
 }
 
-TOTAL_TESTS=20
+TOTAL_TESTS=21
 failed_tests=0
 count=0
 
