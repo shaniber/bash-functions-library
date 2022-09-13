@@ -36,8 +36,12 @@ function util::print() {
 }
 
 ## String justify right.
-function util::justify() {
-  echo "no."
+function util::right_justify() {
+  # ${1} :: string to be justified
+  # ${2} :: width (80)
+  string_to_justify="${1}"
+  width="${2-80}"
+  echo "%${width}s ${string_to_justify}"
 }
 
 ## Warning reporting.
