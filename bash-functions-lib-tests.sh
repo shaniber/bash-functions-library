@@ -53,7 +53,7 @@ increment_test_counter
 printf "» [TEST%+3s/%s]%${WIDTH}s " $count $TOTAL_TESTS "CENTRE JUSTIFY FUNCTION:"
 if [ ! "$(util::centre_justify centre)" == "%50s centre" ] ; then 
   echo "$(tput setaf 1)FAILED"
-  centre_justify centre
+  util::centre_justify centre
   increment_failed_tests_counter
 else 
   echo "$(tput setaf 2)PASSED"

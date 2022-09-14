@@ -50,7 +50,7 @@ function util::centre_justify() {
   string_to_centre="${1}"
   columns="$(tput cols)"
   position=$(( ((${#string_to_centre} + $columns) / 2) - ${#string_to_centre} - 1))
-  echo "%${position}s ${string_to_centre}
+  echo "%${position}s ${string_to_centre}"
 
 }
 
