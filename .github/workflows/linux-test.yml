@@ -4,10 +4,10 @@ jobs:
   run-tests:
     runs-on: ubuntu-latest
     steps:
-      - name: environment
+      - name: Set up environment
         run: echo "TERM=xterm-256color" >> $GITHUB_ENV
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v3
-      - name: run-test-script
+      - name: Run test script
         run: ./bash-functions-lib-tests.sh
         shell: bash
