@@ -44,6 +44,12 @@ function util::right_justify() {
   echo "%${width}s ${string_to_justify}"
 }
 
+## String justify centre.
+function util::centre_justify() {
+  # ${1} :: string to be centred.
+  echo "nope."
+}
+
 ## Warning reporting.
 function util::warn() {
   util::debug "A warning has occurred."
