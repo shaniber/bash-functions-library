@@ -35,6 +35,15 @@ function util::print() {
   fi
 }
 
+## String justify right.
+function util::right_justify() {
+  # ${1} :: string to be justified
+  # ${2} :: width (80)
+  string_to_justify="${1}"
+  width="${2-80}"
+  echo "%${width}s ${string_to_justify}"
+}
+
 ## Warning reporting.
 function util::warn() {
   util::debug "A warning has occurred."
