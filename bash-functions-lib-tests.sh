@@ -28,7 +28,7 @@ echo "-=-= FORMAT TESTS =-=-"
 
 ### JUSTIFY tests
 increment_test_counter
-printf "» [TEST%+3s/%s]%${WIDTH}s " $count $TOTAL_TESTS "RIGHT JUSTIFY FUNCTION(default width):"
+printf "» [TEST%+3s/%s]%${WIDTH}s " $count $TOTAL_TESTS "RIGHT JUSTIFY FUNCTION (default width):"
 if [ ! "$(util::right_justify right)" == "%80s right" ] ; then
   echo "$(tput setaf 1)FAILED"
   increment_failed_tests_counter
@@ -40,6 +40,18 @@ tput sgr 0
 increment_test_counter
 printf "» [TEST%+3s/%s]%${WIDTH}s " $count $TOTAL_TESTS "RIGHT JUSTIFY FUNCTION (10 width):"
 if [ ! "$(util::right_justify right 10)" == "%10s right" ] ; then
+  echo "$(tput setaf 1)FAILED"
+  increment_failed_tests_counter
+else 
+  echo "$(tput setaf 2)PASSED"
+fi
+tput sgr 0
+
+### CENTRE test
+#### NOTE: assumes a terminal width of 80? 
+increment_test_counter
+printf "» [TEST%+3s/%s]%${WIDTH}s " $count $TOTAL_TESTS "CENTRE JUSTIFY FUNCTION:"
+if [ ! "$(util::centre_justify centre)" == "%36s centre" ] ; then 
   echo "$(tput setaf 1)FAILED"
   increment_failed_tests_counter
 else 
