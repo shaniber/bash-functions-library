@@ -15,7 +15,7 @@ function increment_failed_tests_counter() {
 }
 
 WIDTH=40
-TOTAL_TESTS=21
+TOTAL_TESTS=$(grep "^increment_test_counter" bash-functions-lib-tests.sh | wc -l)
 failed_tests=0
 count=0
 
@@ -289,12 +289,12 @@ tput sgr 0
 echo 
 
 if [ $failed_tests -gt 0 ] ; then 
-  echo -E "» "$(tput setaf 1)"${failed_tests}"$(tput sgr 0)"/${TOTAL_TESTS} tests "$(tput setaf 1)"FAILED!"
+  echo -E "» "$(tput setaf 1)"${failed_tests}"$(tput sgr 0)" / ${TOTAL_TESTS} tests "$(tput setaf 1)"FAILED!"
   tput sgr 0
   echo "  Please address the issues, then re-run the tests."
   exit 1
 else 
-  echo "» "$(tput setaf 2)"${TOTAL_TESTS}"$(tput sgr 0)"/${TOTAL_TESTS} tests "$(tput setaf 2)"PASSED!"
+  echo "» "$(tput setaf 2)"${count}"$(tput sgr 0)" / ${TOTAL_TESTS} tests "$(tput setaf 2)"PASSED!"
   tput sgr 0
   exit 0
 fi
