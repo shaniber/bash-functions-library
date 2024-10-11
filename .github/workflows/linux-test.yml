@@ -7,7 +7,7 @@ jobs:
       - name: environment
         run: echo "TERM=xterm-256color" >> $GITHUB_ENV
       - name: checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: run-test-script
         run: ./bash-functions-lib-tests.sh
         shell: bash
