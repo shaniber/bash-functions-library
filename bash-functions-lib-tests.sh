@@ -15,7 +15,7 @@ function increment_failed_tests_counter() {
 }
 
 WIDTH=40
-TOTAL_TESTS=$(grep "^increment_test_counter" bash-functions-lib-tests.sh | wc -l)
+TOTAL_TESTS=$(grep "^increment_test_counter" bash-functions-lib-tests.sh | wc -l | xargs)
 failed_tests=0
 count=0
 
