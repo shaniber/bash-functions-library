@@ -16,7 +16,7 @@ noColour=$(tput sgr 0)
 readonly bold reverse red orange yellow green cyan blue magenta white noColour
 
 ## Set to 1 to enable debugging
-DEBUG=0
+DEBUG=${DEBUG-0}
 
 ## Useful globals
 GIT_PATH=""
