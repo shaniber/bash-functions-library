@@ -14,7 +14,7 @@ function increment_failed_tests_counter() {
   ((failed_tests=failed_tests+1))
 }
 
-WIDTH=40
+WIDTH=59
 TOTAL_TESTS=$(grep "^increment_test_counter" bash-functions-lib-tests.sh | wc -l | xargs)
 failed_tests=0
 count=0
@@ -50,8 +50,10 @@ tput sgr 0
 ### CENTRE test
 #### NOTE: assumes a terminal width of 80? 
 increment_test_counter
+read h w < <(stty size < "$(tty)")
+half=$(( ((6 + $w) / 2) - 6 - 1))
 printf "» [TEST%+3s/%s]%${WIDTH}s " $count $TOTAL_TESTS "CENTRE JUSTIFY FUNCTION:"
-if [ ! "$(util::centre_justify centre)" == "%36s centre" ] ; then 
+if [ ! "$(util::centre_justify centre)" == "%${half}s centre" ] ; then 
   echo "$(tput setaf 1)FAILED"
   increment_failed_tests_counter
 else 
