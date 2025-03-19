@@ -49,7 +49,7 @@ tput sgr 0
 
 ### CENTRE test
 increment_test_counter
-read h w < <(stty size < "$(tty)")
+w="$(tput cols)"
 half=$(( ((6 + $w) / 2) - 6 - 1))
 printf "» [TEST%+3s/%s]%${WIDTH}s " $count $TOTAL_TESTS "CENTRE JUSTIFY FUNCTION:"
 if [ ! "$(util::centre_justify centre)" == "%${half}s centre" ] ; then 
