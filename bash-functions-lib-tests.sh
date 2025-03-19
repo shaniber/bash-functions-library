@@ -48,7 +48,6 @@ fi
 tput sgr 0
 
 ### CENTRE test
-#### NOTE: assumes a terminal width of 80? 
 increment_test_counter
 read h w < <(stty size < "$(tty)")
 half=$(( ((6 + $w) / 2) - 6 - 1))
